@@ -68,7 +68,7 @@ Avalaible examples used in MaskCD:
 ``ericyu/GVLM_Cropped_256``
 ``ericyu/EGY_BCD``
 
-The model will be automatically saved under the path "./exp/\$DATASET_ID\$/", the model with the highest F1 score will be saved under "./exp/``DATASET_ID``/best_f1"
+The model will be automatically saved under the path "./exp/``DATASET_ID``/", the model with the highest F1 score will be saved under "./exp/``DATASET_ID``/best_f1"
 ___
 Testing a model:
 ```console
