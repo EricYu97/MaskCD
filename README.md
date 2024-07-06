@@ -96,8 +96,8 @@ Upload your model to Huggingface Hub
 
 You can also push your model to Huggingface Hub by uncommenting and modifying the codeline in the ``test.py``:
 ```python
-    if accelerator.is_local_main_process:
-        model = model.push_to_hub('ericyu/MaskCD_EGY_BCD')
+if accelerator.is_local_main_process:
+    model = model.push_to_hub('ericyu/MaskCD_EGY_BCD')
 ```
 
 If you find MaskCD useful for your study, please kindly cite us:
