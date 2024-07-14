@@ -12,6 +12,8 @@ Paper: [IEEE TGRS 2024](https://ieeexplore.ieee.org/document/10587034) (DOI: 10.
 
 
 ## Updates
+``July 14, 2024`` Dataset creator is provided, and the paper has been finally published.
+
 ``July 5, 2024`` Our paper has been accepted on IEEE TGRS, and the code is released.
 ## Abstract
 Change detection (CD) from remote sensing (RS) images using deep learning has been widely investigated in the literature. It is typically regarded as a pixel-wise labeling task that aims to classify each pixel as changed or unchanged. Although per-pixel classification networks in encoder-decoder structures have shown dominance, they still suffer from imprecise boundaries and incomplete object delineation at various scenes. For high-resolution RS images, partly or totally changed objects are more worthy of attention rather than a single pixel. Therefore, we revisit the CD task from the mask prediction and classification perspective and propose MaskCD to detect changed areas by adaptively generating categorized masks from input image pairs. Specifically, it utilizes a cross-level change representation perceiver (CLCRP) to learn multiscale change-aware representations and capture spatiotemporal relations from encoded features by exploiting deformable multihead self-attention (DeformMHSA). Subsequently, a masked cross-attention-based detection transformers (MCA-DETR) decoder is developed to accurately locate and identify changed objects based on masked cross-attention and self-attention mechanisms. It reconstructs the desired changed objects by decoding the pixel-wise representations into learnable mask proposals and making final predictions from these candidates. Experimental results on five benchmark datasets demonstrate the proposed approach outperforms other state-of-the-art models.
@@ -99,6 +101,15 @@ You can also push your model to Huggingface Hub by uncommenting and modifying th
 if accelerator.is_local_main_process:
     model = model.push_to_hub('ericyu/MaskCD_EGY_BCD')
 ```
+___
+Create your own dataset:
+
+Please modify the ``dataset_creator.py`` and use ``save_to_disk`` or ``push_to_hub`` according to your usage.
+
+More datasets/pre-trained models will be implemented to be available in our new ``UCD`` project, please stay tuned and star our ``UCD`` [Repo](https://github.com/EricYu97/UCD).
+
+___
+
 
 If you find MaskCD useful for your study, please kindly cite us:
 ```
@@ -107,10 +118,10 @@ If you find MaskCD useful for your study, please kindly cite us:
   journal={IEEE Transactions on Geoscience and Remote Sensing}, 
   title={MaskCD: A Remote Sensing Change Detection Network Based on Mask Classification}, 
   year={2024},
-  volume={},
+  volume={62},
   number={},
-  pages={1-1},
-  keywords={Mask classification;masked cross-attention;deformable attention;change detection;deep learning;remote Sensing},
+  pages={1-16},
+  keywords={Transformers;Feature extraction;Image segmentation;Decoding;Task analysis;Representation learning;Object oriented modeling;Change detection (CD);deep learning;deformable attention;mask classification (MaskCls);masked cross-attention;remote sensing (RS)},
   doi={10.1109/TGRS.2024.3424300}}
 ```
 
